@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmCompute.msgnode="ComIbmCompute.msgnode" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmMQHeader.msgnode="ComIbmMQHeader.msgnode" xmlns:ComIbmMQOutput.msgnode="ComIbmMQOutput.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:ComIbmWSInput.msgnode="ComIbmWSInput.msgnode" xmlns:correlate_SaveCorrelation.subflow="correlate/SaveCorrelation.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:request_Add_Request_Response.subflow="request/Add_Request_Response.subflow" xmlns:request_Divide_Request_Response.subflow="request/Divide_Request_Response.subflow" xmlns:request_Multiply_Request_Response.subflow="request/Multiply_Request_Response.subflow" xmlns:request_Subtract_Request_Response.subflow="request/Subtract_Request_Response.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="CalculatorHttpReq.msgflow" nsPrefix="CalculatorHttpReq.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Output" name="Output" defaultValueLiteral="MQ.REQUEST">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.Path" name="Path" lowerBound="1" defaultValueLiteral="/proxy/http/calculator">
+      <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <translation xmi:type="utility:TranslatableString" key="CalculatorHttpReq" bundleName="CalculatorHttpReq" pluginId="CalculatorAPI"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/CalculatorAPI/icons/full/obj16/CalculatorHttpReq.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/CalculatorAPI/icons/full/obj30/CalculatorHttpReq.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="87,48" URLSpecifier="/http/calculator" setDestinationList="true" parseQueryString="true" messageDomainProperty="XMLNSC">
+        <translation xmi:type="utility:ConstantString" string="HTTPInput"/>
+      </nodes>
+      <nodes xmi:type="request_Add_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_2" location="391,142">
+        <translation xmi:type="utility:ConstantString" string="Add_Request_Response"/>
+      </nodes>
+      <nodes xmi:type="request_Subtract_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_3" location="380,223">
+        <translation xmi:type="utility:ConstantString" string="Subtract_Request_Response"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="624,255" mqmdAAAOptions="Add header" mqmdCodedCharSetId="MQCCSI_Q_MGR" mqmdFormat="MQFMT_NONE" mqmdVersion="MQMD_VERSION_1" mqmdMsgType="MQMT_DATAGRAM" mqmdExpiry="MQEI_UNLIMITED" mqmdFeedback="MQFB_NONE" mqmdPriority="MQPRI_PRIORITY_AS_Q_DEF" mqmdPersistence="MQPER_PERSISTENCE_AS_Q_DEF" mqmdMsgId="MQMI_NONE" mqmdCorrelId="MQCI_NONE">
+        <translation xmi:type="utility:ConstantString" string="MQHeader"/>
+      </nodes>
+      <nodes xmi:type="request_Divide_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="385,385">
+        <translation xmi:type="utility:ConstantString" string="Divide_Request_Response"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="253,385" labelName="Divide">
+        <translation xmi:type="utility:ConstantString" string="Divide"/>
+      </nodes>
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="783,259" queueName="HTTP.MQ.REQUEST">
+        <translation xmi:type="utility:ConstantString" string="MQOutput"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="252,304" labelName="Multiply">
+        <translation xmi:type="utility:ConstantString" string="Multiply"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="253,142" labelName="Add">
+        <translation xmi:type="utility:ConstantString" string="Add"/>
+      </nodes>
+      <nodes xmi:type="correlate_SaveCorrelation.subflow:FCMComposite_1" xmi:id="FCMComposite_1_10" location="903,262">
+        <translation xmi:type="utility:ConstantString" string="SaveCorrelationData"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="252,223" labelName="Subtract">
+        <translation xmi:type="utility:ConstantString" string="Subtract"/>
+      </nodes>
+      <nodes xmi:type="request_Multiply_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_12" location="380,304">
+        <translation xmi:type="utility:ConstantString" string="Multiply_Request_Response"/>
+      </nodes>
+      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="432,44">
+        <translation xmi:type="utility:ConstantString" string="RouteToLabel"/>
+      </nodes>
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_15" location="232,44" computeExpression="esql://routine/correlate#SetCorrelationDataForHttp.Main" computeMode="destinationAndMessage">
+        <translation xmi:type="utility:ConstantString" string="SetCorrelationData_Route"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_11" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_3" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_10" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_12" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_8" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_2" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="FCMComposite_1_12" sourceNode="FCMComposite_1_8" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_10" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_11" targetNode="FCMComposite_1_15" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_12" targetNode="FCMComposite_1_14" sourceNode="FCMComposite_1_15" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer>
+      <propertyDescriptor groupName="Group.Queues" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.mq.MQQueueNameEditor" configurable="true" describedAttribute="Property.Output">
+        <propertyName xmi:type="utility:TranslatableString" key="Property.Output" bundleName="request/CalculatorHttpReq" pluginId="CalculatorWS"/>
+        <propertyDescriptor groupName="Group.URL" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.URLPropertyEditor" configurable="true" describedAttribute="Property.Path">
+          <propertyName xmi:type="utility:TranslatableString" key="Property.Path" bundleName="request/CalculatorHttpReq" pluginId="CalculatorWS"/>
+        </propertyDescriptor>
+      </propertyDescriptor>
+    </propertyOrganizer>
+    <attributeLinks promotedAttribute="Property.Output" overriddenNodes="FCMComposite_1_7">
+      <overriddenAttribute href="ComIbmMQOutput.msgnode#Property.queueName"/>
+    </attributeLinks>
+    <attributeLinks promotedAttribute="Property.Path" overriddenNodes="FCMComposite_1_1">
+      <overriddenAttribute href="ComIbmWSInput.msgnode#Property.URLSpecifier"/>
+    </attributeLinks>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>
